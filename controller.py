@@ -50,11 +50,11 @@ class Controller():
         return output.squeeze(0)
 
     def mutate(self):
-        weight1_noise = (torch.rand_like(self.linear1_w) - 0.5)
-        bias1_noise = (torch.rand_like(self.linear1_b) - 0.5)
+        weight1_noise = (torch.rand_like(self.linear1_w) - 0.5) / 10
+        bias1_noise = (torch.rand_like(self.linear1_b) - 0.5) / 10
 
-        weight2_noise = (torch.rand_like(self.linear2_w) - 0.5)
-        bias2_noise = (torch.rand_like(self.linear2_b) - 0.5)
+        weight2_noise = (torch.rand_like(self.linear2_w) - 0.5) / 10
+        bias2_noise = (torch.rand_like(self.linear2_b) - 0.5) / 10
 
         self.linear1_w += weight1_noise
         self.linear1_b += bias1_noise

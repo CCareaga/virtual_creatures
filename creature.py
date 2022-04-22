@@ -100,7 +100,7 @@ def create_joint(name, parent, child, joint_type, pos, axis, lower, upper):
         type=joint_type
     )
 
-def gen_random_creature(min_joints=2, max_joints=4, hidden_size=16):
+def gen_random_creature(task, min_joints=2, max_joints=3, hidden_size=32):
 
     creat = Creature()
 
@@ -153,9 +153,14 @@ def gen_random_creature(min_joints=2, max_joints=4, hidden_size=16):
         creat.joints.append(new_joint)
     
     num_joints = len(creat.joints)
+    
+    input_sz = (num_joints * 2) + (num_joints + 1)
+
+    if task == 'following':
+        input_sz += 16
 
     new_controller = Controller(
-        (num_joints * 2) + (num_joints + 1),
+        input_sz,
         hidden_size,
         num_joints
     )
@@ -218,6 +223,10 @@ class Creature():
         new_axis = (curr_axis + rand_val)
         new_axis /= np.linalg.norm(new_axis)
         rand_joint[3].xyz = np_to_xml(new_axis)
+
+        new_lo, new_hi = gen_random_limits()
+        rand_joint[4].lower = new_lo
+        rand_joint[4].upper = new_hi
         # =====================================
         
 
