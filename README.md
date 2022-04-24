@@ -35,17 +35,17 @@ To run the walking task with default settings simply run `python train.py`. Afte
 
 ```
 $ python test.py -h
-usage: test.py [-h] [--checkpoint CHECKPOINT] [--task TASK] [--record] [--out_path OUT_PATH]
+
+usage: test.py [-h] [--creature CREATURE] [--task TASK] [--record] [--out_path OUT_PATH]
 
 test a generated creature
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --checkpoint CHECKPOINT
-                        stored creature pickle file
-  --task TASK           walking or following
-  --record              wether or not to record the simulation
-  --out_path OUT_PATH   name of .mp4 file for recording output
+  -h, --help           show this help message and exit
+  --creature CREATURE  path of stored creature pickle file
+  --task TASK          walking or following
+  --record             wether or not to record the simulation
+  --out_path OUT_PATH  name of .mp4 file for recording output
 ```
 
 The evolved walking creatures can be ran using the following command:
