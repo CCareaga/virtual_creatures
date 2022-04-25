@@ -53,7 +53,7 @@ optional arguments:
 The evolved walking creatures can be ran using the following command:
 
 ```
-$ python test.py --checkpoint models/best_100.pkl
+$ python test.py --creature models/best_100.pkl
 ```
 
 Some examples of evolved creatures are included in the `examples/` directory
