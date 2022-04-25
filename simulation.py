@@ -313,8 +313,11 @@ def test_walking(creature, record=False, out_file=None):
 
     distance = 0.0
     prev_pos = np.array([0, 0, 0])
-
-    dt = 1.0 / 240.
+    
+    if record:
+        dt = 1.0 / 600.
+    else:
+        dt = 1.0 / 240.
 
     goal_pos = np.array([1., 1., 0.])
     goal_vel = np.array([0., 0., 0.])
