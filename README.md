@@ -1,5 +1,7 @@
 #### Virtual Creatures Re-Implementation
 
+![](https://github.com/CCareaga/cmpt766_final_project/blob/main/images/banner.png?raw=true)
+
 #### Installing
 
 This repo depends on a few popular packages:
